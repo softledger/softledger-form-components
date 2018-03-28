@@ -2,14 +2,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardBody } from 'reactstrap';
-import classNames from 'classnames';
-import './CardValue.scss';
 
 const CardValue = ({big, Header, Body, style}) =>  {
+	const getStyle = big ? {} : {padding: ".25rem"};
+
 	const renderHeader = Header => {
 		if(Header) {
 			return (
-				<CardHeader>
+				<CardHeader style={getStyle()}>
 					{Header}
 				</CardHeader>
 			);
@@ -17,11 +17,10 @@ const CardValue = ({big, Header, Body, style}) =>  {
 	}
 	return (
 		<Card 
-			className={classNames({'card-tight': !big})}
-			style={style}
+			style={{style}}
 		>
 			{renderHeader(Header)}
-			<CardBody>
+			<CardBody style={getStyle()}>
 				{Body}
 			</CardBody>
 		</Card>

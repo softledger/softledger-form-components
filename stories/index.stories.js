@@ -3,15 +3,19 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
+import { withState } from '@dump247/storybook-state';
 
 //add fontawesome icons for testing
 import fontawesome from '@fortawesome/fontawesome';
 import faRocket from '@fortawesome/fontawesome-free-solid/faRocket';
-fontawesome.library.add(faRocket);
+import faTimes from '@fortawesome/fontawesome-free-solid/faTimes';
+import faPlus from '@fortawesome/fontawesome-free-solid/faPlus';
+import faBars from '@fortawesome/fontawesome-free-solid/faBars';
+fontawesome.library.add(faRocket, faTimes, faPlus, faBars);
 
+//Story components
 import { 
-	ButtonBar, CardValue, ChipButton, ConfirmButton, DateFormat,
-	LoadingButton, SLLoadingIcon, SLLogo, TabView, ZeroPad
+	BoolDropDownMenuItem, ButtonBar, CardValue, ChipButton, ConfirmButton, DateFormat, DropDownMenu, LoadingButton, SLLoadingIcon, SLLogo, TabView, ZeroPad
 } from '../src';
 
 //promise function
@@ -115,6 +119,26 @@ storiesOf('DateFormat', module)
 	))
 	.add('Custom format', () => (
 		<DateFormat date={new Date} format={'MM/DD/YY'} />
+	))
+
+storiesOf('DropDownMenu', module)
+	.add('With List', () => 
+		<DropDownMenu>
+			<ul>
+				<li>One</li>
+				<li>Two</li>
+			</ul>
+		</DropDownMenu>
+	)
+	.add('With Boolean Toggle', 
+		withState({active: false}, store => 
+			<DropDownMenu>
+				<BoolDropDownMenuItem
+					onToggle={text => store.set({active: !store.state.active})}
+					text="Toggle Me!"
+					value={store.state.active}
+				/>
+			</DropDownMenu>		
 	))
 
 storiesOf('LoadingButton', module)
