@@ -1,0 +1,54 @@
+/**
+ * Drag and Drop File Upload
+ */
+.file-uploader {
+  border: 3px dashed $header-gray;
+  padding: 10px;
+  min-height: 6rem;
+}
+
+.file-drop {
+  height: 100%;
+  width: 100%;
+}
+
+.file-drop > .file-drop-target {
+    /* basic styles */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    min-height: 5rem;
+    height: 100%; 
+    width: 100%;
+    border-radius: 2px;
+    /* --------------- */
+
+    /* a little transition sizzle */
+    transition: all 150ms linear;
+    -webkit-transition: all 150ms linear;
+    -moz-transition: all 150ms linear;
+    -ms-transition: all 150ms linear;
+    -o-transition: all 150ms linear;
+    opacity: 0;
+}
+
+.file-drop > .file-drop-target.file-drop-dragging-over-frame {
+    /* overlay a black mask when dragging over the frame */
+    border: none;
+    background-color: #dadada;
+    box-shadow: none;
+    z-index: 50;
+    opacity: .5;
+    /* --------------- */
+
+    /* typography */
+    color: white;
+    /* --------------- */
+}
+
+.file-drop > .file-drop-target.file-drop-dragging-over-target {
+    /* turn stuff orange when we are dragging over the target */
+     color: $header-gray;
+     box-shadow: 0 0 13px 3px $darkblue-SoftLedger;
+}

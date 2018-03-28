@@ -1,30 +1,32 @@
 //hopefully this works?
 import 'bootstrap/scss/bootstrap.scss';
+import fontawesome from '@fortawesome/fontawesome';
+import faInfoCircle from '@fortawesome/fontawesome-free-solid/faInfoCircle';
+import faTimes from '@fortawesome/fontawesome-free-solid/faTimes';
+fontawesome.library.add(faInfoCircle, Times);
 
-import BoolDropDownMenuItem from './BoolDropDownMenuItem';
-import ButtonBar from './ButtonBar';
-import CardValue from './CardValue';
-import ChipButton from './ChipButton';
-import ConfirmButton from './ConfirmButton';
-import DateFormat from './DateFormat';
-import DropDownMenu from './DropDownMenu';
-import LoadingButton from './LoadingButton';
-import SLLoadingIcon from './SLLoadingIcon';
-import SLLogo from './SLLogo';
-import TabView from './TabView';
-import ZeroPad from './ZeroPad';
+import Checkbox from './Checkbox';
+import ErrorFormFeedback from './ErrorFormFeedback';
+import FileUploadList from './FileUploadList';
+import Input from './Input';
+import SelectCountry from './SelectCountry';
+import SimpleSelect from './SimpleSelect';
+import SLDate from './SLDate';
+import SLDateRange from './SLDateRange';
+import SLForm from './SLForm';
+import SLFormGroup from './SLFormGroup';
+import TextArea from './TextArea';
 
 export {
-	BoolDropDownMenuItem,
-	ButtonBar,
-	CardValue,
-	ChipButton,
-	ConfirmButton,
-	DateFormat,
-	DropDownMenu,
-	LoadingButton,
-	SLLoadingIcon,
-	SLLogo,
-	TabView,
-	ZeroPad
+	Checkbox,
+	ErrorFormFeedback,
+	FileUploadList,
+	Input,
+	SelectCountry,
+	SimpleSelect,
+	SLDate,
+	SLDateRange,
+	SLForm,
+	SLFormGroup,
+	TextArea
 }
