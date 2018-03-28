@@ -11,7 +11,7 @@ fontawesome.library.add(faRocket);
 
 import { 
 	ButtonBar, CardValue, ChipButton, ConfirmButton, DateFormat,
-	SLLoadingIcon 
+	LoadingButton, SLLoadingIcon, SLLogo, TabView, ZeroPad
 } from '../src';
 
 //promise function
@@ -114,8 +114,80 @@ storiesOf('DateFormat', module)
 		<DateFormat />
 	))
 	.add('Custom format', () => (
-		<DateFormat date={new Date} format={'MM/DD/YY'}
+		<DateFormat date={new Date} format={'MM/DD/YY'} />
 	))
+
+storiesOf('LoadingButton', module)
+	.add('Default', () => 
+		<LoadingButton 
+			onClick={() => sleep(1000)}
+			buttonText="Loading Button" 
+		/>
+	)
+	.add('All options', () => 
+		<LoadingButton
+			onClick={() => sleep(1000)}
+			buttonClass="btn-success"
+			buttonText="My Button Text"
+			toolTip="My Tooltip"
+		/>
+	)
+	.add('Not Promise', () => 
+		<LoadingButton
+			onClick={action('button-click')}
+			buttonText="Not a Promise"
+			notPromise={true}
+		/>
+	)
+	.add('With Icon', () => 
+		<LoadingButton
+			onClick={() => sleep(1000)}
+			iconClass="rocket"
+		/>
+	)
+	.add('Disabled', () =>
+		<LoadingButton
+			disabled={true}
+			buttonText="Disabled"
+			onClick={() => sleep(1000)}
+		/>
+	)
 
 storiesOf('SLLoadingIcon', module)
 	.add('Default', () => <SLLoadingIcon />)
+
+storiesOf('SLLogo', module)
+	.add('Default', () => <SLLogo />);
+
+storiesOf('TabView', module)
+	.add('Default', () => 
+		<TabView
+			tabs={[{
+				Header: "Tab Numero Uno",
+				Body: "Nothing on click"
+			}, {
+				Header: "Tab Numero Dos",
+				Body: "Action on click",
+				onClick: action('button-click')
+			}]}
+		/>
+	)
+
+storiesOf('ZeroPad', module)
+	.add('With Pad', () => 
+		<ZeroPad 
+			value="4"
+			pad={4}
+		/>
+	)
+	.add("With Pad Not Needed", () => 
+		<ZeroPad
+			value="40000"
+			pad={4}
+		/>
+	)
+	.add('Without value', () => 
+		<ZeroPad
+			pad={4}
+		/>
+	)

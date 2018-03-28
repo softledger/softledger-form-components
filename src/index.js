@@ -6,7 +6,11 @@ import CardValue from './CardValue';
 import ChipButton from './ChipButton';
 import ConfirmButton from './ConfirmButton';
 import DateFormat from './DateFormat';
+import LoadingButton from './LoadingButton';
 import SLLoadingIcon from './SLLoadingIcon';
+import SLLogo from './SLLogo';
+import TabView from './TabView';
+import ZeroPad from './ZeroPad';
 
 export {
 	ButtonBar,
@@ -14,5 +18,9 @@ export {
 	ChipButton,
 	ConfirmButton,
 	DateFormat,
-	SLLoadingIcon
+	LoadingButton,
+	SLLoadingIcon,
+	SLLogo,
+	TabView,
+	ZeroPad
 }
