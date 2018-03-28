@@ -1,5 +1,5 @@
 {
-  "name": "softledger-components",
+  "name": "@softledger/components",
   "version": "0.1.0",
   "author": "Geoff Ostrega <geoff.ostrega@softledger.com>",
   "license": "ISC",
