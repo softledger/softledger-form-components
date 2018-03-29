@@ -6,8 +6,8 @@ import { Table } from 'reactstrap';
 import { LoadingButton } from '@softledger/components';
 import './FileUpload.css';
 
-const FileUploadList = props => {
-	const renderTableRows = files => files.map((a, idx) => (
+class FileUploadList extends React.Component {
+	renderTableRows = files => files.map((a, idx) => (
 		<tr key={idx}>
 			<td>
 				<div style={{
@@ -21,7 +21,7 @@ const FileUploadList = props => {
 			<td>
 				<LoadingButton 
 					iconClass="times"
-					handleClick={() => props.onRemove(idx)}
+					onClick={() => this.props.onRemove(idx)}
 				/>
 			</td>
 		</tr>
@@ -44,23 +44,23 @@ const FileUploadList = props => {
 		)
 	}
 
-	let dt;
-
-	return (
-		<div className="file-uploader"
-			ref={dropTarget => dt = dropTarget}>
-			{props.dropText || "Drag Here to upload"}
-			<FileDrop frame={dt}
-				onDrop={props.onDrop}>
-			</FileDrop>
-			{this.renderTable(props.files)}
-		</div>
-	)
+	render() {
+		return (
+			<div className="file-uploader"
+				ref={dropTarget => this.dropTarget = dropTarget}>
+				{this.props.dropText || "Drag Here to upload"}
+				<FileDrop frame={this.dropTarget}
+					onDrop={this.props.onDrop}>
+				</FileDrop>
+				{this.renderTable(this.props.files)}
+			</div>
+		)
+	}
 }
 
-FileUpload.propTypes = {
+FileUploadList.propTypes = {
 	//can be a dom element
-	dropText: PropTypes.object,
+	dropText: PropTypes.any,
 	//list of files to display, can leavae blank to not have table shown
 	files: PropTypes.array,
 	//handler for file(s) being dropped

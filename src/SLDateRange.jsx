@@ -23,7 +23,7 @@ class SLDateRange extends React.Component {
 					id={this.props.id}
 					onClick={this.toggle}
 				>
-					Filter
+					{this.props.buttonText || 'Filter'}
 				</Button>
 				<Popover 
 					placement="top" 
@@ -54,6 +54,7 @@ class SLDateRange extends React.Component {
 
 SLDateRange.propTypes = {
 	id: PropTypes.string.isRequired,
+	buttonText: PropTypes.string,
 	startDate: PropTypes.any,
 	endDate: PropTypes.any,
 	onChange: PropTypes.func.isRequired

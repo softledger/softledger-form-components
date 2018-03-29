@@ -1,7 +1,9 @@
 'use strict';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Label, FormGroup, FormText, Tooltip } from 'reactstrap';
+import { Label, FormGroup, FormText } from 'reactstrap';
+import Tooltip from 'rc-tooltip';
+import 'rc-tooltip/assets/bootstrap.css';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 export default class SLFormGroup extends React.Component {
@@ -16,12 +18,11 @@ export default class SLFormGroup extends React.Component {
 			return (
 				<Label>
 					{this.props.label}
-					<FontAwesomeIcon icon="info-circle" id="tooltip" />
-					<Tooltip placement="top"
-						isOpen={this.state.tooltipOpen}
-						target="tooltip"
-						toggle={this.toggle}>
-						{this.props.helpText}
+					<Tooltip 
+						placement="top"
+						overlay={this.props.helpText}
+					>
+						<FontAwesomeIcon icon="info-circle" id="tooltip" />
 					</Tooltip>
 				</Label>
 			)

@@ -1,9 +1,16 @@
 //hopefully this works?
+
+import 'react-dates/initialize';
+
 import 'bootstrap/scss/bootstrap.scss';
+import 'react-select/dist/react-select.css';
+import 'react-dates/lib/css/_datepicker.css';
+import 'react-day-picker/lib/style.css';
+import './Form.css';
 import fontawesome from '@fortawesome/fontawesome';
 import faInfoCircle from '@fortawesome/fontawesome-free-solid/faInfoCircle';
 import faTimes from '@fortawesome/fontawesome-free-solid/faTimes';
-fontawesome.library.add(faInfoCircle, Times);
+fontawesome.library.add(faInfoCircle, faTimes);
 
 import Checkbox from './Checkbox';
 import ErrorFormFeedback from './ErrorFormFeedback';

@@ -12,6 +12,8 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
+    "@softledger/components": "^0.1.6",
+    "bootstrap": "^4.0.0",
     "prop-types": "~15.6.0",
     "react": "~16.2.0",
     "reactstrap": "~5.0.0"
