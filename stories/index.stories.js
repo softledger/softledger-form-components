@@ -12,6 +12,8 @@ import {
 	Checkbox, FileUploadList, Input, SelectCountry, SimpleSelect, SLDate, SLDateRange, SLForm, SLFormGroup, TextArea
 } from '../dist';
 
+import '../dist/styles.scss';
+
 //promise function
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 

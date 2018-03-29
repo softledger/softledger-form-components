@@ -2,9 +2,6 @@
 
 require('react-dates/initialize');
 
-require('react-select/dist/react-select.css');
-require('react-dates/lib/css/_datepicker.css');
-require('react-day-picker/lib/style.css');
 var _fontawesome = require('@fortawesome/fontawesome');var _fontawesome2 = _interopRequireDefault(_fontawesome);
 var _faInfoCircle = require('@fortawesome/fontawesome-free-solid/faInfoCircle');var _faInfoCircle2 = _interopRequireDefault(_faInfoCircle);
 var _faTimes = require('@fortawesome/fontawesome-free-solid/faTimes');var _faTimes2 = _interopRequireDefault(_faTimes);
@@ -20,8 +17,8 @@ var _SLDate = require('./SLDate');var _SLDate2 = _interopRequireDefault(_SLDate)
 var _SLDateRange = require('./SLDateRange');var _SLDateRange2 = _interopRequireDefault(_SLDateRange);
 var _SLForm = require('./SLForm');var _SLForm2 = _interopRequireDefault(_SLForm);
 var _SLFormGroup = require('./SLFormGroup');var _SLFormGroup2 = _interopRequireDefault(_SLFormGroup);
-var _TextArea = require('./TextArea');var _TextArea2 = _interopRequireDefault(_TextArea);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}_fontawesome2.default.library.add(_faInfoCircle2.default, _faTimes2.default); //hopefully this works?
-exports.
+var _TextArea = require('./TextArea');var _TextArea2 = _interopRequireDefault(_TextArea);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //hopefully this works?
+_fontawesome2.default.library.add(_faInfoCircle2.default, _faTimes2.default);exports.
 
 Checkbox = _Checkbox2.default;exports.
 ErrorFormFeedback = _ErrorFormFeedback2.default;exports.
