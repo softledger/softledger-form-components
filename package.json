@@ -7,12 +7,12 @@
   "main": "./dist/index.js",
   "scripts": {
     "clean-dist": "rm -rf ./dist",
-    "build": "yarn run clean-dist && NODE_ENV=production `yarn bin`/babel ./src --out-dir ./dist && cp ./src/*.css ./dist",
+    "build": "yarn run clean-dist && NODE_ENV=production `yarn bin`/babel ./src --out-dir ./dist && cp ./src/*.scss ./dist",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "@softledger/components": "^0.1.6",
+    "@softledger/components": "~0",
     "bootstrap": "^4.0.0",
     "prop-types": "~15.6.0",
     "react": "~16.2.0",

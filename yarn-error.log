@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/gostrega/.nvm/versions/node/v8.9.4/bin/node /Users/gostrega/.nvm/versions/node/v8.9.4/bin/yarn publish --access public
+  /Users/gostrega/.nvm/versions/node/v8.9.4/bin/node /Users/gostrega/.nvm/versions/node/v8.9.4/bin/yarn build
 
 PATH: 
   /Users/gostrega/.nvm/versions/node/v8.9.4/bin:/Users/gostrega/Library/Python/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -16,7 +16,7 @@ Platform:
 npm manifest: 
   {
     "name": "@softledger/form-components",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "author": "Geoff Ostrega <geoff.ostrega@softledger.com>",
     "license": "MIT",
     "description": "SoftLedger UI Form Components",
@@ -28,7 +28,7 @@ npm manifest:
       "build-storybook": "build-storybook"
     },
     "peerDependencies": {
-      "@softledger/components": "^0.1.6",
+      "@softledger/components": "~0",
       "bootstrap": "^4.0.0",
       "prop-types": "~15.6.0",
       "react": "~16.2.0",
@@ -7264,12 +7264,12 @@ Lockfile:
 
 Trace: 
   Error: Command failed.
-  Exit code: 128
-  Command: git
-  Arguments: tag v0.1.1 -am v0.1.1
+  Exit code: 1
+  Command: sh
+  Arguments: -c yarn run clean-dist && NODE_ENV=production `yarn bin`/babel ./src --out-dir ./dist && cp ./src/*.css ./dist
   Directory: /Users/gostrega/BitBucket/softledger-form-components
   Output:
-  fatal: tag 'v0.1.1' already exists
+  
       at ProcessTermError.MessageError (/Users/gostrega/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/lib/cli.js:186:110)
       at new ProcessTermError (/Users/gostrega/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/lib/cli.js:226:113)
       at ChildProcess.<anonymous> (/Users/gostrega/.nvm/versions/node/v8.9.4/lib/node_modules/yarn/lib/cli.js:30281:17)

@@ -1,3 +1,8 @@
+
+@import '~react-select/dist/react-select/css';
+@import '~react-dates/lib/css/_datepicker.css';
+@import '~react-day-picker/lib/style/css';
+
 /**
  * Drag and Drop File Upload
  */
@@ -51,4 +56,53 @@
     /* turn stuff orange when we are dragging over the target */
      color: #9b9b9b;
      box-shadow: 0 0 13px 3px #102326;
+}
+
+
+.form-control {
+  border-radius: 0px;
+}
+
+.form-check-input {
+  margin-top: 0rem;
+}
+
+label {
+  color: #6b7c93;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+}
+
+.DATE {
+  font-family: bentonsansbook;
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  color: #898989;
+}
+
+.DayPickerInput {
+  display: block;
+}
+
+.DayPickerInput__small > input {
+  width: 100px;
+}
+
+.form-control-feedback {
+  color: #dc3545;
+  font-size: 80%;
+  border-top: 1px #dc3545 solid;
+}
+
+.Select-control {
+  border-radius: 0px;
+}
+
+.form-group .form-control {
+  line-height: 34px;
+  padding: 0rem .75rem;
 }

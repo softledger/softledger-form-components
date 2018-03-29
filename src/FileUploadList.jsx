@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import FileDrop from 'react-file-drop';
 import { Table } from 'reactstrap';
 import { LoadingButton } from '@softledger/components';
-import './FileUpload.css';
 
 class FileUploadList extends React.Component {
 	renderTableRows = files => files.map((a, idx) => (
