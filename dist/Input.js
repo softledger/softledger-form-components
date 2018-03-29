@@ -19,7 +19,10 @@ Input.propTypes = {
 	type: _propTypes2.default.string,
 	value: _propTypes2.default.any,
 	className: _propTypes2.default.string,
-	errorText: _propTypes2.default.string };exports.default =
+	errorText: _propTypes2.default.oneOfType([
+	_propTypes2.default.string,
+	_propTypes2.default.array]) };exports.default =
+
 
 
 

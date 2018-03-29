@@ -19,7 +19,10 @@ Input.propTypes = {
 	type: PropTypes.string,
 	value: PropTypes.any,
 	className: PropTypes.string,
-	errorText: PropTypes.string
+	errorText: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.array
+	])
 }
 
 

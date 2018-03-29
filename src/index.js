@@ -2,7 +2,6 @@
 
 import 'react-dates/initialize';
 
-import 'bootstrap/scss/bootstrap.scss';
 import 'react-select/dist/react-select.css';
 import 'react-dates/lib/css/_datepicker.css';
 import 'react-day-picker/lib/style.css';

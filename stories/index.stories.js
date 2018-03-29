@@ -5,6 +5,8 @@ import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 import { withState } from '@dump247/storybook-state';
 
+import 'bootstrap/scss/bootstrap.scss';
+
 //Story components
 import { 
 	Checkbox, FileUploadList, Input, SelectCountry, SimpleSelect, SLDate, SLDateRange, SLForm, SLFormGroup, TextArea
