@@ -71,8 +71,8 @@ prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
 **inputProps** | `Object` |  | :x: | Additional props to add to the input
 **onChange** | `Function` |  | :white_check_mark: | callback when date is selected
-**openLeft** | `Number` | `0` | :x: | offset to display calendar in pixels
-**timezone** | `String` | `'Browsers timezone'` | :x: | Timezone to use for for display
+**openLeft** | `Number` |  | :x: | offset to display calendar in pixels
+**timezone** | `String` |  | :x: | Timezone to use for for display
 **value** | `Union<String \| Object>` |  | :x: | Current date to display should be a string, Date(), or moment()
 
 

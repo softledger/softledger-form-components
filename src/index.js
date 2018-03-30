@@ -1,6 +1,10 @@
 //hopefully this works?
 
 import 'react-dates/initialize';
+import 'react-select/dist/react-select.css';
+import 'react-dates/lib/css/_datepicker.css';
+import 'react-day-picker/lib/style.css';
+import './styles.scss';
 
 import fontawesome from '@fortawesome/fontawesome';
 import faInfoCircle from '@fortawesome/fontawesome-free-solid/faInfoCircle';

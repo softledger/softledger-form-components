@@ -10,9 +10,7 @@ import 'bootstrap/scss/bootstrap.scss';
 //Story components
 import { 
 	Checkbox, FileUploadList, Input, SelectCountry, SimpleSelect, SLDate, SLDateRange, SLForm, SLFormGroup, TextArea
-} from '../dist';
-
-import '../dist/styles.scss';
+} from '../src';
 
 //promise function
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));

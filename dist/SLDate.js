@@ -1,44 +1,46 @@
-'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();
 var _react = require('react');var _react2 = _interopRequireDefault(_react);
 var _propTypes = require('prop-types');var _propTypes2 = _interopRequireDefault(_propTypes);
 var _DayPickerInput = require('react-day-picker/DayPickerInput');var _DayPickerInput2 = _interopRequireDefault(_DayPickerInput);
 var _moment = require('react-day-picker/moment');
-var _moment2 = require('moment');var _moment3 = _interopRequireDefault(_moment2);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+var _momentTimezone = require('moment-timezone');var _momentTimezone2 = _interopRequireDefault(_momentTimezone);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}
 
 /**
-                                                                                                                                                                                * Date Input component
-                                                                                                                                                                                */
-var SLDate = function SLDate(props) {
-	//set system timezone here
-	var onChange = function onChange(d) {return onChange((0, _moment3.default)(d).utcOffset(props.imezone));};
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * Date Input component
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */var
+SLDate = function (_React$Component) {_inherits(SLDate, _React$Component);function SLDate() {var _ref;var _temp, _this, _ret;_classCallCheck(this, SLDate);for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SLDate.__proto__ || Object.getPrototypeOf(SLDate)).call.apply(_ref, [this].concat(args))), _this), _this.
 
-	var openLeft = function openLeft(_ref) {var classNames = _ref.classNames,selectedDay = _ref.selectedDay,children = _ref.children;return (
-			_react2.default.createElement('div', {
-					className: classNames.overlayWrapper,
-					style: { marginLeft: props.openLeft } },
-				_react2.default.createElement('div', { className: classNames.overlay },
-					children)));};
+		onChange = function (d) {return _this.props.onChange((0, _momentTimezone2.default)(d, _this.props.timezone));}, _this.
 
-
-
-
-	return (
-		_react2.default.createElement(_DayPickerInput2.default, {
-			value: (0, _moment.formatDate)(props.value),
-			formatDate: _moment.formatDate,
-			parseDate: _moment.parseDate,
-			onDayChange: props.onChange,
-			overlayComponent: props.openLeft && openLeft,
-			dayPickerProps: {
-				todayButton: "Today",
-				showOutsideDays: true },
-
-			inputProps: _extends({},
-			props.inputProps, {
-				className: "form-control" }) }));
+		openLeft = function (_ref2) {var classNames = _ref2.classNames,selectedDay = _ref2.selectedDay,children = _ref2.children;return (
+				_react2.default.createElement('div', {
+						className: classNames.overlayWrapper,
+						style: { marginLeft: _this.props.openLeft } },
+					_react2.default.createElement('div', { className: classNames.overlay },
+						children)));}, _temp), _possibleConstructorReturn(_this, _ret);} //convert value to passed timezone from browser
+	_createClass(SLDate, [{ key: 'render', value: function render()
 
 
-};
+
+		{
+			return (
+				_react2.default.createElement(_DayPickerInput2.default, {
+					value: (0, _moment.formatDate)(this.props.value),
+					formatDate: _moment.formatDate,
+					parseDate: _moment.parseDate,
+					onDayChange: this.onChange,
+					overlayComponent: this.props.openLeft && this.openLeft,
+					dayPickerProps: {
+						todayButton: "Today",
+						showOutsideDays: true },
+
+					inputProps: _extends({},
+					this.props.inputProps, {
+						className: "form-control" }) }));
+
+
+		} }]);return SLDate;}(_react2.default.Component);
+
 
 SLDate.propTypes = {
 	/**
@@ -64,12 +66,7 @@ SLDate.propTypes = {
 	/**
                                           * Timezone to use for for display
                                           */
-	timezone: _propTypes2.default.string };
-
-
-SLDate.defaultProps = {
-	openLeft: 0,
-	timezone: 'Browsers timezone' };exports.default =
+	timezone: _propTypes2.default.string };exports.default =
 
 
 SLDate;

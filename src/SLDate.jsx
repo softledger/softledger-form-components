@@ -3,41 +3,43 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { formatDate, parseDate } from 'react-day-picker/moment';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 /**
  * Date Input component
  */
-const SLDate = props => {
-	//set system timezone here
-	const onChange = d => onChange(moment(d).utcOffset(props.imezone))
+class SLDate extends React.Component {
+	//convert value to passed timezone from browser
+	onChange = d => this.props.onChange(moment(d, this.props.timezone));
 
-	const openLeft = ({classNames, selectedDay, children}) => (
+	openLeft = ({classNames, selectedDay, children}) => (
 		<div 
       className={classNames.overlayWrapper} 
-      style={{ marginLeft: props.openLeft }}>
+      style={{ marginLeft: this.props.openLeft }}>
       <div className={classNames.overlay}> 
         {children}
       </div>
     </div>
 	);
 
-	return (
-		<DayPickerInput
-			value={formatDate(props.value)}
-			formatDate={formatDate}
-			parseDate={parseDate}
-			onDayChange={props.onChange}
-			overlayComponent={props.openLeft && openLeft}
-			dayPickerProps={{
-				todayButton: "Today",
-				showOutsideDays: true
-			}}
-			inputProps={{
-				...props.inputProps,
-				className: "form-control"
-			}} />
-	);
+	render() {
+		return (
+			<DayPickerInput
+				value={formatDate(this.props.value)}
+				formatDate={formatDate}
+				parseDate={parseDate}
+				onDayChange={this.onChange}
+				overlayComponent={this.props.openLeft && this.openLeft}
+				dayPickerProps={{
+					todayButton: "Today",
+					showOutsideDays: true
+				}}
+				inputProps={{
+					...this.props.inputProps,
+					className: "form-control"
+				}} />
+		);
+	}
 }
 
 SLDate.propTypes = {
@@ -65,11 +67,6 @@ SLDate.propTypes = {
 	 * Timezone to use for for display
 	 */
 	timezone: PropTypes.string
-}
-
-SLDate.defaultProps = {
-	openLeft: 0,
-	timezone: 'Browsers timezone'
 }
 
 export default SLDate;
