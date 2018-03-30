@@ -65,7 +65,7 @@ FileUploadList.propTypes = {
 	/**
 	 * Text or JSX to display in the dropzone
 	 */
-	dropText: PropTypes.onOfType([
+	dropText: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.object
 	]),

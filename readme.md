@@ -35,7 +35,7 @@ Dropped files are displayed as a table with option to remove them individually
 
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
-**dropText** | `(custom validator)` | `'Drag Here to upload'` | :x: | Text or JSX to display in the dropzone
+**dropText** | `Union<String \| Object>` | `'Drag Here to upload'` | :x: | Text or JSX to display in the dropzone
 **files** | `Array` |  | :x: | list of files to display, can leave blank to not have table shown
 **onDrop** | `Function` |  | :white_check_mark: | callback for when a file is dropped
 **onRemove** | `Function` |  | :x: | Callback for when a file is removed required if files prop is not blank
