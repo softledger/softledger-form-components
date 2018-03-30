@@ -5,6 +5,9 @@ import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { formatDate, parseDate } from 'react-day-picker/moment';
 import moment from 'moment';
 
+/**
+ * Date Input component
+ */
 const SLDate = props => {
 	//set system timezone here
 	const onChange = d => onChange(moment(d).utcOffset(props.imezone))
@@ -38,12 +41,35 @@ const SLDate = props => {
 }
 
 SLDate.propTypes = {
-	//date or string or moment
-	value: PropTypes.any,
+	/**
+	 * Current date to display
+	 * should be a string, Date(), or moment()
+	 */
+	value: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.object
+	]),
+	/**
+	 * callback when date is selected
+	 */
 	onChange: PropTypes.func.isRequired,
+	/**
+	 * offset to display calendar in pixels
+	 */
 	openLeft: PropTypes.number,
+	/**
+	 * Additional props to add to the input
+	 */
 	inputProps: PropTypes.object,
+	/**
+	 * Timezone to use for for display
+	 */
 	timezone: PropTypes.string
+}
+
+SLDate.defaultProps = {
+	openLeft: 0,
+	timezone: 'Browsers timezone'
 }
 
 export default SLDate;

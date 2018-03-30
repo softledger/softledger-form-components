@@ -5,6 +5,10 @@ import FileDrop from 'react-file-drop';
 import { Table } from 'reactstrap';
 import { LoadingButton } from '@softledger/components';
 
+/**
+ * Displays a dropzone for files
+ * Dropped files are displayed as a table with option to remove them individually
+ */
 class FileUploadList extends React.Component {
 	renderTableRows = files => files.map((a, idx) => (
 		<tr key={idx}>
@@ -58,14 +62,30 @@ class FileUploadList extends React.Component {
 }
 
 FileUploadList.propTypes = {
-	//can be a dom element
-	dropText: PropTypes.any,
-	//list of files to display, can leavae blank to not have table shown
+	/**
+	 * Text or JSX to display in the dropzone
+	 */
+	dropText: PropTypes.onOfType([
+		PropTypes.string,
+		PropTypes.object
+	]),
+	/**
+	 * list of files to display, can leave blank to not have table shown
+	 */
 	files: PropTypes.array,
-	//handler for file(s) being dropped
+	/**
+	 * callback for when a file is dropped
+	 */
 	onDrop: PropTypes.func.isRequired,
-	//remove file, needed if files is not blank
+	/**
+	 * Callback for when a file is removed
+	 * required if files prop is not blank
+	 */
 	onRemove: PropTypes.func
+}
+
+FileUploadList.defaultProps = {
+	dropText: 'Drag Here to upload'
 }
 
 export default FileUploadList;

@@ -2,8 +2,12 @@
 var _react = require('react');var _react2 = _interopRequireDefault(_react);
 var _propTypes = require('prop-types');var _propTypes2 = _interopRequireDefault(_propTypes);
 var _reactstrap = require('reactstrap');
-var _reactDates = require('react-dates');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var
+var _reactDates = require('react-dates');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}
 
+/**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Input which allows user to pick a range of dates
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * wrapper on react-dates
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */var
 SLDateRange = function (_React$Component) {_inherits(SLDateRange, _React$Component);
 	function SLDateRange(props) {_classCallCheck(this, SLDateRange);var _this = _possibleConstructorReturn(this, (SLDateRange.__proto__ || Object.getPrototypeOf(SLDateRange)).call(this,
 		props));_this.
@@ -53,11 +57,36 @@ SLDateRange = function (_React$Component) {_inherits(SLDateRange, _React$Compone
 
 
 SLDateRange.propTypes = {
+	/**
+                           * Unique ID required
+                           */
 	id: _propTypes2.default.string.isRequired,
+	/**
+                                             * Text for button
+                                             */
 	buttonText: _propTypes2.default.string,
-	startDate: _propTypes2.default.any,
-	endDate: _propTypes2.default.any,
-	onChange: _propTypes2.default.func.isRequired };exports.default =
+	/**
+                                          * value to use as startDate
+                                          */
+	startDate: _propTypes2.default.oneOfType([
+	_propTypes2.default.string,
+	_propTypes2.default.object]),
+
+	/**
+                                * value to use as end date
+                                */
+	endDate: _propTypes2.default.oneOfType([
+	_propTypes2.default.string,
+	_propTypes2.default.object]),
+
+	/**
+                                * callback when start or end date changes
+                                */
+	onChange: _propTypes2.default.func.isRequired };
+
+
+SLDateRange.defaultProps = {
+	buttonText: 'Filter' };exports.default =
 
 
 SLDateRange;

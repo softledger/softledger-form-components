@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import CountryList from './util/countryList.js';
 import Select from 'react-select';
 
+/**
+ * Select a country code in a dropdown
+ */
 class SelectCountry extends React.Component {
   constructor(props) {
     super(props);
@@ -33,7 +36,13 @@ class SelectCountry extends React.Component {
 }
 
 SelectCountry.propTypes = {
+  /**
+   * callback when a country is selected
+   */
   onChange: PropTypes.func.isRequired,
+  /**
+   * current selected country
+   */
   value: PropTypes.object
 }
 

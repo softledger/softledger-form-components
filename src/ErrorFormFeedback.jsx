@@ -2,6 +2,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Display errors underneath an input component
+ */
 const ErrorFormFeedback = ({errors}) => {		
 	if(errors && errors instanceof Array && errors.length > 0) {
 		return (
@@ -23,6 +26,9 @@ const ErrorFormFeedback = ({errors}) => {
 }
 
 ErrorFormFeedback.propTypes = {
+	/**
+	 * List of errors to display, can be an array or string
+	 */
 	errors: PropTypes.oneOfType([
 		PropTypes.array,
 		PropTypes.string

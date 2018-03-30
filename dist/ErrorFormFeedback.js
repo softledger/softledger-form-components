@@ -2,6 +2,9 @@
 var _react = require('react');var _react2 = _interopRequireDefault(_react);
 var _propTypes = require('prop-types');var _propTypes2 = _interopRequireDefault(_propTypes);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
+/**
+                                                                                                                                                                                           * Display errors underneath an input component
+                                                                                                                                                                                           */
 var ErrorFormFeedback = function ErrorFormFeedback(_ref) {var errors = _ref.errors;
 	if (errors && errors instanceof Array && errors.length > 0) {
 		return (
@@ -23,6 +26,9 @@ var ErrorFormFeedback = function ErrorFormFeedback(_ref) {var errors = _ref.erro
 };
 
 ErrorFormFeedback.propTypes = {
+	/**
+                                 * List of errors to display, can be an array or string
+                                 */
 	errors: _propTypes2.default.oneOfType([
 	_propTypes2.default.array,
 	_propTypes2.default.string]) };exports.default =

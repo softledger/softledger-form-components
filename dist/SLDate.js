@@ -5,6 +5,9 @@ var _DayPickerInput = require('react-day-picker/DayPickerInput');var _DayPickerI
 var _moment = require('react-day-picker/moment');
 var _moment2 = require('moment');var _moment3 = _interopRequireDefault(_moment2);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
+/**
+                                                                                                                                                                                * Date Input component
+                                                                                                                                                                                */
 var SLDate = function SLDate(props) {
 	//set system timezone here
 	var onChange = function onChange(d) {return onChange((0, _moment3.default)(d).utcOffset(props.imezone));};
@@ -38,12 +41,35 @@ var SLDate = function SLDate(props) {
 };
 
 SLDate.propTypes = {
-	//date or string or moment
-	value: _propTypes2.default.any,
+	/**
+                      * Current date to display
+                      * should be a string, Date(), or moment()
+                      */
+	value: _propTypes2.default.oneOfType([
+	_propTypes2.default.string,
+	_propTypes2.default.object]),
+
+	/**
+                                * callback when date is selected
+                                */
 	onChange: _propTypes2.default.func.isRequired,
+	/**
+                                                 * offset to display calendar in pixels
+                                                 */
 	openLeft: _propTypes2.default.number,
+	/**
+                                        * Additional props to add to the input
+                                        */
 	inputProps: _propTypes2.default.object,
-	timezone: _propTypes2.default.string };exports.default =
+	/**
+                                          * Timezone to use for for display
+                                          */
+	timezone: _propTypes2.default.string };
+
+
+SLDate.defaultProps = {
+	openLeft: 0,
+	timezone: 'Browsers timezone' };exports.default =
 
 
 SLDate;

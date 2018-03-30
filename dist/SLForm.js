@@ -4,9 +4,11 @@ var _propTypes = require('prop-types');var _propTypes2 = _interopRequireDefault(
 var _reactstrap = require('reactstrap');
 
 
-var _components = require('@softledger/components');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var
+var _components = require('@softledger/components');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}
 
-
+/**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * Form Component to display as a modal or not
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */var
 SLForm = function (_React$Component) {_inherits(SLForm, _React$Component);
 
 	function SLForm(props) {_classCallCheck(this, SLForm);var _this = _possibleConstructorReturn(this, (SLForm.__proto__ || Object.getPrototypeOf(SLForm)).call(this,
@@ -113,13 +115,46 @@ SLForm = function (_React$Component) {_inherits(SLForm, _React$Component);
 
 
 SLForm.propTypes = {
-	//only required if notModal is false
+	/**
+                      * Header Text for Modal
+                      * *required if notModal={false}
+                      */
 	header: _propTypes2.default.string,
+	/**
+                                      * Callback when form is submitted, expected to return Promise
+                                      */
 	onSubmit: _propTypes2.default.func.isRequired,
+	/**
+                                                 * Form fields to display, should be JSX
+                                                 * * recommended to use SLFormGroup wrapped components for best presentation
+                                                 */
 	fields: _propTypes2.default.object.isRequired,
+	/**
+                                                 * Function that returns a button
+                                                 * * this is passed a cb for the buttons onclick method
+                                                 *   toggle => <button onClick={toggle}>Btn</button>
+                                                 */
 	Button: _propTypes2.default.func,
-	size: _propTypes2.default.string,
-	//the form is valid
+	/**
+                                    * size of the modal
+                                    */
+	size: _propTypes2.default.oneOf(['sm', 'md', 'lg', 'xl']),
+	/**
+                                                             * Set to true if the form is not valid
+                                                             * this will disable the submit button
+                                                             */
 	formInValid: _propTypes2.default.bool,
+	/**
+                                         * Set true if the form should not be a modal
+                                         */
 	notModal: _propTypes2.default.bool,
-	submitButton: _propTypes2.default.func };
+	/**
+                                      * If notModal={true} a custom submit button may be used
+                                      * * this is passed a callback for submit and formInvalid
+                                      * (submit, invalid) => <button disabled={invalid} onClick={submit}>submit</button>
+                                      */
+	submitButton: _propTypes2.default.func,
+	/**
+                                          * callback for when the modal is toggled open
+                                          */
+	onToggle: _propTypes2.default.func };

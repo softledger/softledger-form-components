@@ -4,8 +4,11 @@ var _propTypes = require('prop-types');var _propTypes2 = _interopRequireDefault(
 var _reactstrap = require('reactstrap');
 var _rcTooltip = require('rc-tooltip');var _rcTooltip2 = _interopRequireDefault(_rcTooltip);
 require('rc-tooltip/assets/bootstrap.css');
-var _reactFontawesome = require('@fortawesome/react-fontawesome');var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var
+var _reactFontawesome = require('@fortawesome/react-fontawesome');var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}
 
+/**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * Wrapper for a form input which will display labels and align elements nicely in an SLForm
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            */var
 SLFormGroup = function (_React$Component) {_inherits(SLFormGroup, _React$Component);
 	function SLFormGroup(props) {_classCallCheck(this, SLFormGroup);var _this = _possibleConstructorReturn(this, (SLFormGroup.__proto__ || Object.getPrototypeOf(SLFormGroup)).call(this,
 		props));_this.
@@ -64,9 +67,29 @@ SLFormGroup = function (_React$Component) {_inherits(SLFormGroup, _React$Compone
 
 
 SLFormGroup.propTypes = {
+	/**
+                           * Input Label Text
+                           */
 	label: _propTypes2.default.string,
+	/**
+                                     * Help text to display when hovering over help icon
+                                     * * useful for giving context to an input value
+                                     */
 	helpText: _propTypes2.default.string,
-	input: _propTypes2.default.object,
+	/**
+                                        * Form Input JSX
+                                        */
+	input: _propTypes2.default.object.isRequired,
+	/**
+                                                * Set true to hide the label component
+                                                */
 	hideLabel: _propTypes2.default.bool,
-	//true if this is a checkbox
+	/**
+                                       * Set to true if the input is a check or radio to display label correctly
+                                       */
 	check: _propTypes2.default.bool };
+
+
+SLFormGroup.defaultProps = {
+	hideLabel: false,
+	check: false };

@@ -6,7 +6,9 @@ import {
 } from 'reactstrap'
 import { SLLoadingIcon } from '@softledger/components';
 
-
+/**
+ * Form Component to display as a modal or not
+ */
 export default class SLForm extends React.Component {
 	
 	constructor(props) {
@@ -113,15 +115,47 @@ export default class SLForm extends React.Component {
 }
 
 SLForm.propTypes = {
-	//only required if notModal is false
+	/**
+	 * Header Text for Modal
+	 * *required if notModal={false}
+	 */
 	header: PropTypes.string,
+	/**
+	 * Callback when form is submitted, expected to return Promise
+	 */
 	onSubmit: PropTypes.func.isRequired,
+	/**
+	 * Form fields to display, should be JSX
+	 * * recommended to use SLFormGroup wrapped components for best presentation
+	 */
 	fields: PropTypes.object.isRequired,
+	/**
+	 * Function that returns a button
+	 * * this is passed a cb for the buttons onclick method
+	 *   toggle => <button onClick={toggle}>Btn</button>
+	 */
 	Button: PropTypes.func,
-	size: PropTypes.string,
-	//the form is valid
+	/**
+	 * size of the modal
+	 */
+	size: PropTypes.oneOf(['sm', 'md', 'lg', 'xl']),
+	/**
+	 * Set to true if the form is not valid
+	 * this will disable the submit button
+	 */
 	formInValid: PropTypes.bool,
+	/**
+	 * Set true if the form should not be a modal
+	 */
 	notModal: PropTypes.bool,
-	submitButton: PropTypes.func
+	/**
+	 * If notModal={true} a custom submit button may be used
+	 * * this is passed a callback for submit and formInvalid
+	 * (submit, invalid) => <button disabled={invalid} onClick={submit}>submit</button>
+	 */
+	submitButton: PropTypes.func,
+	/**
+	 * callback for when the modal is toggled open
+	 */
+	onToggle: PropTypes.func
 }
-

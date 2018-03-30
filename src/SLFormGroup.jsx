@@ -6,6 +6,9 @@ import Tooltip from 'rc-tooltip';
 import 'rc-tooltip/assets/bootstrap.css';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
+/**
+ * Wrapper for a form input which will display labels and align elements nicely in an SLForm
+ */
 export default class SLFormGroup extends React.Component {
 	constructor(props) {
 		super(props);
@@ -64,10 +67,30 @@ export default class SLFormGroup extends React.Component {
 }
 
 SLFormGroup.propTypes = {
+	/**
+	 * Input Label Text
+	 */
 	label: PropTypes.string,
+	/**
+	 * Help text to display when hovering over help icon
+	 * * useful for giving context to an input value
+	 */
 	helpText: PropTypes.string,
-	input: PropTypes.object,
+	/**
+	 * Form Input JSX
+	 */
+	input: PropTypes.object.isRequired,
+	/**
+	 * Set true to hide the label component
+	 */
 	hideLabel: PropTypes.bool,
-	//true if this is a checkbox
+	/**
+	 * Set to true if the input is a check or radio to display label correctly
+	 */
 	check: PropTypes.bool
+}
+
+SLFormGroup.defaultProps = {
+	hideLabel: false,
+	check: false
 }
