@@ -10,7 +10,11 @@ import moment from 'moment-timezone';
  */
 class SLDate extends React.Component {
 	//convert value to passed timezone from browser
-	onChange = d => this.props.onChange(moment(d, this.props.timezone));
+	onChange = d => {
+		//stops the date from disapearing on backspace
+		if(!d) d = this.props.value;
+		return this.props.onChange(moment(d, this.props.timezone));
+	}
 
 	openLeft = ({classNames, selectedDay, children}) => (
 		<div 
