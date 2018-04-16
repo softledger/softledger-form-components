@@ -10,7 +10,11 @@ var _momentTimezone = require('moment-timezone');var _momentTimezone2 = _interop
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        */var
 SLDate = function (_React$Component) {_inherits(SLDate, _React$Component);function SLDate() {var _ref;var _temp, _this, _ret;_classCallCheck(this, SLDate);for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SLDate.__proto__ || Object.getPrototypeOf(SLDate)).call.apply(_ref, [this].concat(args))), _this), _this.
 
-		onChange = function (d) {return _this.props.onChange((0, _momentTimezone2.default)(d, _this.props.timezone));}, _this.
+		onChange = function (d) {
+			//stops the date from disapearing on backspace
+			if (!d) d = _this.props.value;
+			return _this.props.onChange((0, _momentTimezone2.default)(d, _this.props.timezone));
+		}, _this.
 
 		openLeft = function (_ref2) {var classNames = _ref2.classNames,selectedDay = _ref2.selectedDay,children = _ref2.children;return (
 				_react2.default.createElement('div', {
