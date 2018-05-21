@@ -26,6 +26,7 @@ class SLDateRange extends React.Component {
 					}}
 					id={this.props.id}
 					onClick={this.toggle}
+					disabled={this.props.disabled}
 				>
 					{this.props.buttonText || 'Filter'}
 				</Button>
@@ -82,11 +83,16 @@ SLDateRange.propTypes = {
 	/**
 	 * callback when start or end date changes
 	 */
-	onChange: PropTypes.func.isRequired
+	onChange: PropTypes.func.isRequired,
+	/**
+	 * true to disable toggling
+	 */
+	disabled: PropTypes.bool
 }
 
 SLDateRange.defaultProps = {
-	buttonText: 'Filter'
+	buttonText: 'Filter',
+	disabled: false
 }
 
 export default SLDateRange;

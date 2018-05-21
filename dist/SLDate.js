@@ -40,7 +40,9 @@ SLDate = function (_React$Component) {_inherits(SLDate, _React$Component);functi
 
 					inputProps: _extends({},
 					this.props.inputProps, {
-						className: "form-control" }) }));
+						className: "form-control",
+						disabled: this.props.disabled }) }));
+
 
 
 		} }]);return SLDate;}(_react2.default.Component);
@@ -70,7 +72,15 @@ SLDate.propTypes = {
 	/**
                                           * Timezone to use for for display
                                           */
-	timezone: _propTypes2.default.string };exports.default =
+	timezone: _propTypes2.default.string,
+	/**
+                                        * true to disable toggling
+                                        */
+	disabled: _propTypes2.default.bool };
+
+
+SLDate.defaultProps = {
+	disabled: false };exports.default =
 
 
 SLDate;

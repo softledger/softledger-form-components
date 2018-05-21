@@ -6,12 +6,13 @@ var _reactSwitch = require('react-switch');var _reactSwitch2 = _interopRequireDe
 /**
                                                                                                                                                                                                    * Checkbox component using react-switch
                                                                                                                                                                                                    */
-var Checkbox = function Checkbox(_ref) {var _onChange = _ref.onChange,value = _ref.value;return (
+var Checkbox = function Checkbox(_ref) {var _onChange = _ref.onChange,value = _ref.value,disabled = _ref.disabled;return (
 		_react2.default.createElement(_reactSwitch2.default, {
 			onChange: function onChange(e) {return _onChange(e);},
 			checked: value,
 			className: 'react-switch',
-			id: 'normal-switch' }));};
+			id: 'normal-switch',
+			disabled: disabled }));};
 
 
 
@@ -23,7 +24,15 @@ Checkbox.propTypes = {
 	/**
                                                  * value of the component
                                                  */
-	value: _propTypes2.default.bool };exports.default =
+	value: _propTypes2.default.bool,
+	/**
+                                   * true to disable toggling
+                                   */
+	disabled: _propTypes2.default.bool };
+
+
+Checkbox.defaultProps = {
+	disabled: false };exports.default =
 
 
 Checkbox;

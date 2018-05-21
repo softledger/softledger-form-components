@@ -30,6 +30,7 @@ class SelectCountry extends React.Component {
         options={CountryList}
         labelKey="name"
         valueKey="_id"
+        disabled={this.props.disabled}
       />
     )
   }
@@ -43,7 +44,15 @@ SelectCountry.propTypes = {
   /**
    * current selected country
    */
-  value: PropTypes.object
+  value: PropTypes.object,
+  /**
+   * true to disable toggling
+   */
+  disabled: PropTypes.bool
+}
+
+SelectCountry.defaultProps = {
+  disabled: false
 }
 
 export default SelectCountry;

@@ -6,12 +6,13 @@ import Switch from 'react-switch';
 /**
  * Checkbox component using react-switch
  */
-const Checkbox = ({onChange, value}) => (
+const Checkbox = ({onChange, value, disabled}) => (
 	<Switch
     onChange={e => onChange(e)}
     checked={value}
     className="react-switch"
     id="normal-switch"
+    disabled={disabled}
   />
 );
 
@@ -23,7 +24,15 @@ Checkbox.propTypes = {
 	/**
 	 * value of the component
 	 */
-	value: PropTypes.bool
+	value: PropTypes.bool,
+	/**
+	 * true to disable toggling
+	 */
+	disabled: PropTypes.bool
+}
+
+Checkbox.defaultProps = {
+	disabled: false
 }
 
 export default Checkbox;

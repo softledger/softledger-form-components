@@ -6,10 +6,12 @@ var _propTypes = require('prop-types');var _propTypes2 = _interopRequireDefault(
                                                                                                                                                                                            * Thing wrapper on textarea tag
                                                                                                                                                                                            * Displays errors below input
                                                                                                                                                                                            */
-var TextArea = function TextArea(_ref) {var _onChange = _ref.onChange,className = _ref.className,value = _ref.value;return (
-		_react2.default.createElement('textarea', { className: 'form-control ' + className,
+var TextArea = function TextArea(_ref) {var _onChange = _ref.onChange,className = _ref.className,value = _ref.value,disabled = _ref.disabled;return (
+		_react2.default.createElement('textarea', {
+			className: 'form-control ' + className,
 			onChange: function onChange(e) {return _onChange(e.currentTarget.value);},
-			value: value }));};
+			value: value,
+			disabled: disabled }));};
 
 
 
@@ -25,7 +27,15 @@ TextArea.propTypes = {
 	/**
                                   * additional classnames to add to input tag
                                   */
-	className: _propTypes2.default.string };exports.default =
+	className: _propTypes2.default.string,
+	/**
+                                         * true to disable toggling
+                                         */
+	disabled: _propTypes2.default.bool };
+
+
+TextArea.defaultProps = {
+	disabled: false };exports.default =
 
 
 TextArea;

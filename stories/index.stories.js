@@ -24,7 +24,17 @@ storiesOf('Checkbox', module)
 			/>
 			<p>{`Value: ${store.state.v}`}</p>
 		</div>
-	)));
+	)))
+	.add('Disabled', withState({v:false}, store => (
+		<div>
+			<Checkbox
+				onChange={v => store.set({v})}
+				value={store.state.v}
+				disabled
+			/>
+			<p>{`Value: ${store.state.v}`}</p>
+		</div>
+	)))
 
 storiesOf('FileUploadList', module)
 	.add('Default', withState({files: []}, store => (
@@ -54,6 +64,16 @@ storiesOf('Input', module)
 			<Input
 				onChange={v => store.set({v})}
 				value={store.state.v}
+			/>
+			<p>{`Value: ${store.state.v}`}</p>
+		</div>
+	)))
+	.add('Disabled', withState({v:'Can\'t Change'}, store => (
+		<div>
+			<Input
+				onChange={v => store.set({v})}
+				value={store.state.v}
+				disabled
 			/>
 			<p>{`Value: ${store.state.v}`}</p>
 		</div>
@@ -89,6 +109,16 @@ storiesOf('SelectCountry', module)
 			<p>{`Value: ${store.state.v}`}</p>
 		</div>
 	)))
+	.add('Disabled', withState({v:null}, store => (
+		<div>
+			<SelectCountry
+				onChange={v => store.set({v})}
+				value={store.state.v}
+				disabled
+			/>
+			<p>{`Value: ${store.state.v}`}</p>
+		</div>
+	)))
 
 storiesOf('SimpleSelect', module)
 	.add('Default', withState({v:null}, store => (
@@ -108,6 +138,24 @@ storiesOf('SimpleSelect', module)
 			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
 		</div>
 	)))
+	.add('Disabled', withState({v:null}, store => (
+		<div>
+			<SimpleSelect
+				onChange={v => store.set({v})}
+				valueField="value"
+				labelField="label"
+				options={[
+					{value: "1", label: "one"},
+					{value: "2", label: "two"},
+					{value: "3", label: "three"},
+					{value: "4", label: "four"},
+					{value: "5", label: "five"},
+				]}
+				disabled
+			/>
+			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
+		</div>
+	)))
 
 storiesOf('SLDate', module)
 	.add('Default', withState({v: new Date()}, store => (
@@ -115,6 +163,16 @@ storiesOf('SLDate', module)
 			<SLDate
 				onChange={v => store.set({v})}
 				value={store.state.v}
+			/>
+			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
+		</div>
+	)))
+	.add('Disabled', withState({v: new Date()}, store => (
+		<div>
+			<SLDate
+				onChange={v => store.set({v})}
+				value={store.state.v}
+				disabled
 			/>
 			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
 		</div>
@@ -138,6 +196,24 @@ storiesOf('SLDateRange', module)
 			<p>{`Value: ${JSON.stringify(store.state)}`}</p>
 		</div>
 	)))
+	.add('Disabled', withState({
+		startDate: null,
+		endDate: null
+	}, store => (
+		<div>
+			<SLDateRange
+				id="dateRange1"
+				onChange={v => store.set({
+					startDate: v.startDate,
+					endDate: v.endDate
+				})}
+				startDate={store.state.startDate}
+				endDate={store.state.endDate}
+				disabled
+			/>
+			<p>{`Value: ${JSON.stringify(store.state)}`}</p>
+		</div>
+	)))
 
 storiesOf('TextArea', module)
 	.add('Default', withState({v:''}, store => (
@@ -145,6 +221,16 @@ storiesOf('TextArea', module)
 			<TextArea
 				onChange={v => store.set({v})}
 				value={store.state.v}
+			/>
+			<p>{`Value: ${store.state.v}`}</p>
+		</div>
+	)))
+	.add('Disabled', withState({v:'A whole bunch of text that you can\'t change'}, store => (
+		<div>
+			<TextArea
+				onChange={v => store.set({v})}
+				value={store.state.v}
+				disabled
 			/>
 			<p>{`Value: ${store.state.v}`}</p>
 		</div>

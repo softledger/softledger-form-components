@@ -6,10 +6,12 @@ import PropTypes from 'prop-types';
  * Thing wrapper on textarea tag
  * Displays errors below input
  */
-const TextArea = ({onChange, className, value}) =>  (
-		<textarea className={`form-control ${className}`}
+const TextArea = ({onChange, className, value, disabled}) =>  (
+		<textarea 
+			className={`form-control ${className}`}
 			onChange={e => onChange(e.currentTarget.value)}
 			value={value}
+			disabled={disabled}
 		/>
 );
 
@@ -25,7 +27,15 @@ TextArea.propTypes = {
 	/**
 	 * additional classnames to add to input tag
 	 */
-	className: PropTypes.string
+	className: PropTypes.string,
+	/**
+	 * true to disable toggling
+	 */
+	disabled: PropTypes.bool
+}
+
+TextArea.defaultProps = {
+	disabled: false
 }
 
 export default TextArea;

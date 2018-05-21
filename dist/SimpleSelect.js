@@ -13,7 +13,8 @@ var SimpleSelect = function SimpleSelect(props) {return (
 			onChange: props.onChange,
 			value: props.value,
 			options: props.options,
-			backspaceRemoves: true }));};
+			backspaceRemoves: true,
+			disabled: props.disabled }));};
 
 
 
@@ -34,12 +35,17 @@ SimpleSelect.propTypes = {
                                           * array of objects to choose from
                                           * should have keys with value of valueField and labelField props
                                           */
-	options: _propTypes2.default.array.isRequired };
+	options: _propTypes2.default.array.isRequired,
+	/**
+                                                 * true to disable toggling
+                                                 */
+	disabled: _propTypes2.default.bool };
 
 
 SimpleSelect.defaultProps = {
 	valueField: '_id',
-	labelField: 'label' };exports.default =
+	labelField: 'label',
+	disabled: false };exports.default =
 
 
 SimpleSelect;

@@ -25,7 +25,8 @@ SLDateRange = function (_React$Component) {_inherits(SLDateRange, _React$Compone
 								padding: ".25rem .75rem" },
 
 							id: this.props.id,
-							onClick: this.toggle },
+							onClick: this.toggle,
+							disabled: this.props.disabled },
 
 						this.props.buttonText || 'Filter'),
 
@@ -82,11 +83,16 @@ SLDateRange.propTypes = {
 	/**
                                 * callback when start or end date changes
                                 */
-	onChange: _propTypes2.default.func.isRequired };
+	onChange: _propTypes2.default.func.isRequired,
+	/**
+                                                 * true to disable toggling
+                                                 */
+	disabled: _propTypes2.default.bool };
 
 
 SLDateRange.defaultProps = {
-	buttonText: 'Filter' };exports.default =
+	buttonText: 'Filter',
+	disabled: false };exports.default =
 
 
 SLDateRange;

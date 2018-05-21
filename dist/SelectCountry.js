@@ -29,7 +29,8 @@ SelectCountry = function (_React$Component) {_inherits(SelectCountry, _React$Com
           onChange: this.changeValue,
           options: _countryList2.default,
           labelKey: 'name',
-          valueKey: '_id' }));
+          valueKey: '_id',
+          disabled: this.props.disabled }));
 
 
     } }]);return SelectCountry;}(_react2.default.Component);
@@ -43,7 +44,15 @@ SelectCountry.propTypes = {
   /**
                                                   * current selected country
                                                   */
-  value: _propTypes2.default.object };exports.default =
+  value: _propTypes2.default.object,
+  /**
+                                      * true to disable toggling
+                                      */
+  disabled: _propTypes2.default.bool };
+
+
+SelectCountry.defaultProps = {
+  disabled: false };exports.default =
 
 
 SelectCountry;

@@ -7,6 +7,7 @@ Checkbox component using react-switch
 
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
+**disabled** | `Boolean` | `false` | :x: | true to disable toggling
 **onChange** | `Function` |  | :white_check_mark: | callback when toggled
 **value** | `Boolean` |  | :x: | value of the component
 
@@ -53,6 +54,7 @@ Displays errors below input
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
 **className** | `String` |  | :x: | additional classnames to add to input tag
+**disabled** | `Boolean` | `false` | :x: | true to disable input
 **errorText** | `Union<String \| Array>` |  | :x: | Errors to display, should be a string or array of strings @type {[type]}
 **onChange** | `Function` |  | :white_check_mark: | Callback when updated
 **type** | `String` | `'text'` | :x: | type of input
@@ -69,6 +71,7 @@ Date Input component
 
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
+**disabled** | `Boolean` | `false` | :x: | true to disable toggling
 **inputProps** | `Object` |  | :x: | Additional props to add to the input
 **onChange** | `Function` |  | :white_check_mark: | callback when date is selected
 **openLeft** | `Number` |  | :x: | offset to display calendar in pixels
@@ -88,6 +91,7 @@ wrapper on react-dates
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
 **buttonText** | `String` | `'Filter'` | :x: | Text for button
+**disabled** | `Boolean` | `false` | :x: | true to disable toggling
 **endDate** | `Union<String \| Object>` |  | :x: | value to use as end date
 **id** | `String` |  | :white_check_mark: | Unique ID required
 **onChange** | `Function` |  | :white_check_mark: | callback when start or end date changes
@@ -142,6 +146,7 @@ Select a country code in a dropdown
 
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
+**disabled** | `Boolean` | `false` | :x: | true to disable toggling
 **onChange** | `Function` |  | :white_check_mark: | callback when a country is selected
 **value** | `Object` |  | :x: | current selected country
 
@@ -156,6 +161,7 @@ Simplified wrapper of react-select
 
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
+**disabled** | `Boolean` | `false` | :x: | true to disable toggling
 **labelField** | `String` | `'label'` | :x: | object key to use as the label
 **onChange** | `Function` |  | :white_check_mark: | callback when option selected
 **options** | `Array` |  | :white_check_mark: | array of objects to choose from should have keys with value of valueField and labelField props
@@ -174,6 +180,7 @@ Displays errors below input
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
 **className** | `String` |  | :x: | additional classnames to add to input tag
+**disabled** | `Boolean` | `false` | :x: | true to disable toggling
 **onChange** | `Function` |  | :white_check_mark: | Callback when updated
 **value** | `*` |  | :x: | value of component
 

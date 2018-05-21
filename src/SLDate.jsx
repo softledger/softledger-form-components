@@ -40,8 +40,10 @@ class SLDate extends React.Component {
 				}}
 				inputProps={{
 					...this.props.inputProps,
-					className: "form-control"
-				}} />
+					className: "form-control",
+					disabled: this.props.disabled
+				}}
+			/>
 		);
 	}
 }
@@ -70,7 +72,15 @@ SLDate.propTypes = {
 	/**
 	 * Timezone to use for for display
 	 */
-	timezone: PropTypes.string
+	timezone: PropTypes.string,
+	/**
+	 * true to disable toggling
+	 */
+	disabled: PropTypes.bool
+}
+
+SLDate.defaultProps = {
+	disabled: false
 }
 
 export default SLDate;

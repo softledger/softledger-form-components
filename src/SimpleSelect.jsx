@@ -14,6 +14,7 @@ const SimpleSelect = (props) => (
 		value={props.value}
 		options={props.options}
 		backspaceRemoves={true}
+		disabled={props.disabled}
 	/>
 );
 
@@ -34,12 +35,17 @@ SimpleSelect.propTypes = {
 	 * array of objects to choose from
 	 * should have keys with value of valueField and labelField props
 	 */
-	options: PropTypes.array.isRequired
+	options: PropTypes.array.isRequired,
+	/**
+	 * true to disable toggling
+	 */
+	disabled: PropTypes.bool
 }
 
 SimpleSelect.defaultProps = {
 	valueField: '_id',
-	labelField: 'label'
+	labelField: 'label', 
+	disabled: false
 }
 
 export default SimpleSelect;
