@@ -8,10 +8,10 @@ import moment from 'moment-timezone';
 /**
  * Date Picker Overlay
  */
-const OverlayLeft = ({ classNames, selectedDay, children, ...props }) => (
+const OverlayLeft = ({ classNames, selectedDay, children, ...props}, openLeft) => (
   <div
     className={classNames.overlayWrapper}
-    style={{ marginLeft: "-150px" }}
+    style={{ marginLeft:  openLeft ? "-150px" : "0px"}}
     {...props}
   >
     <div className={classNames.overlay}>
@@ -45,7 +45,7 @@ class SLDate extends React.Component {
 				format={this.props.format}
 				parseDate={parseDate}
 				onDayChange={this.onChange}
-				overlayComponent={this.props.openLeft && OverlayLeft}
+				overlayComponent={props => OverlayLeft(props, this.props.openLeft)}
 				keepFocus={!this.props.openLeft}
 				dayPickerProps={{
 					todayButton: "Today",

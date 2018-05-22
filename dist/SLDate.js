@@ -8,10 +8,10 @@ var _momentTimezone = require('moment-timezone');var _momentTimezone2 = _interop
 /**
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            * Date Picker Overlay
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            */
-var OverlayLeft = function OverlayLeft(_ref) {var classNames = _ref.classNames,selectedDay = _ref.selectedDay,children = _ref.children,props = _objectWithoutProperties(_ref, ['classNames', 'selectedDay', 'children']);return (
+var OverlayLeft = function OverlayLeft(_ref, openLeft) {var classNames = _ref.classNames,selectedDay = _ref.selectedDay,children = _ref.children,props = _objectWithoutProperties(_ref, ['classNames', 'selectedDay', 'children']);return (
 		_react2.default.createElement('div', _extends({
 				className: classNames.overlayWrapper,
-				style: { marginLeft: "-150px" } },
+				style: { marginLeft: openLeft ? "-150px" : "0px" } },
 			props),
 
 			_react2.default.createElement('div', { className: classNames.overlay },
@@ -37,7 +37,7 @@ SLDate = function (_React$Component) {_inherits(SLDate, _React$Component);functi
 			return _this.props.onChange((0, _momentTimezone2.default)(d, _this.props.timezone));
 		}, _temp), _possibleConstructorReturn(_this, _ret);} //convert value to passed timezone from browser
 	_createClass(SLDate, [{ key: 'render', value: function render()
-		{
+		{var _this2 = this;
 			return (
 				_react2.default.createElement(_DayPickerInput2.default, {
 					value: (0, _moment.formatDate)(this.props.value, this.props.format),
@@ -45,7 +45,7 @@ SLDate = function (_React$Component) {_inherits(SLDate, _React$Component);functi
 					format: this.props.format,
 					parseDate: _moment.parseDate,
 					onDayChange: this.onChange,
-					overlayComponent: this.props.openLeft && OverlayLeft,
+					overlayComponent: function overlayComponent(props) {return OverlayLeft(props, _this2.props.openLeft);},
 					keepFocus: !this.props.openLeft,
 					dayPickerProps: {
 						todayButton: "Today",
