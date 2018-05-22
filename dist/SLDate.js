@@ -1,30 +1,42 @@
-'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();var _extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};
 var _react = require('react');var _react2 = _interopRequireDefault(_react);
 var _propTypes = require('prop-types');var _propTypes2 = _interopRequireDefault(_propTypes);
 var _DayPickerInput = require('react-day-picker/DayPickerInput');var _DayPickerInput2 = _interopRequireDefault(_DayPickerInput);
 var _moment = require('react-day-picker/moment');
-var _momentTimezone = require('moment-timezone');var _momentTimezone2 = _interopRequireDefault(_momentTimezone);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}
+var _momentTimezone = require('moment-timezone');var _momentTimezone2 = _interopRequireDefault(_momentTimezone);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}function _objectWithoutProperties(obj, keys) {var target = {};for (var i in obj) {if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];}return target;}
+
 /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * Date Input component
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */var
-SLDate = function (_React$Component) {_inherits(SLDate, _React$Component);function SLDate() {var _ref;var _temp, _this, _ret;_classCallCheck(this, SLDate);for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = SLDate.__proto__ || Object.getPrototypeOf(SLDate)).call.apply(_ref, [this].concat(args))), _this), _this.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           * Date Picker Overlay
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           */
+var OverlayLeft = function OverlayLeft(_ref) {var classNames = _ref.classNames,selectedDay = _ref.selectedDay,children = _ref.children,props = _objectWithoutProperties(_ref, ['classNames', 'selectedDay', 'children']);return (
+		_react2.default.createElement('div', _extends({
+				className: classNames.overlayWrapper,
+				style: { marginLeft: "-150px" } },
+			props),
+
+			_react2.default.createElement('div', { className: classNames.overlay },
+				children)));};
+
+
+
+
+OverlayLeft.propTypes = {
+	classNames: _propTypes2.default.object.isRequired,
+	selectedDay: _propTypes2.default.instanceOf(Date),
+	children: _propTypes2.default.node.isRequired };
+
+
+/**
+                                                   * Date Input component
+                                                   */var
+SLDate = function (_React$Component) {_inherits(SLDate, _React$Component);function SLDate() {var _ref2;var _temp, _this, _ret;_classCallCheck(this, SLDate);for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {args[_key] = arguments[_key];}return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref2 = SLDate.__proto__ || Object.getPrototypeOf(SLDate)).call.apply(_ref2, [this].concat(args))), _this), _this.
 
 		onChange = function (d) {
 			//stops the date from disapearing on backspace
 			if (!d) d = _this.props.value;
 			return _this.props.onChange((0, _momentTimezone2.default)(d, _this.props.timezone));
-		}, _this.
-
-		openLeft = function (_ref2) {var classNames = _ref2.classNames,selectedDay = _ref2.selectedDay,children = _ref2.children;return (
-				_react2.default.createElement('div', {
-						className: classNames.overlayWrapper,
-						style: { marginLeft: _this.props.openLeft } },
-					_react2.default.createElement('div', { className: classNames.overlay },
-						children)));}, _temp), _possibleConstructorReturn(_this, _ret);} //convert value to passed timezone from browser
+		}, _temp), _possibleConstructorReturn(_this, _ret);} //convert value to passed timezone from browser
 	_createClass(SLDate, [{ key: 'render', value: function render()
-
-
-
 		{
 			return (
 				_react2.default.createElement(_DayPickerInput2.default, {
@@ -33,7 +45,8 @@ SLDate = function (_React$Component) {_inherits(SLDate, _React$Component);functi
 					format: this.props.format,
 					parseDate: _moment.parseDate,
 					onDayChange: this.onChange,
-					overlayComponent: this.props.openLeft && this.openLeft,
+					overlayComponent: this.props.openLeft && OverlayLeft,
+					keepFocus: !this.props.openLeft,
 					dayPickerProps: {
 						todayButton: "Today",
 						showOutsideDays: true },
@@ -64,10 +77,10 @@ SLDate.propTypes = {
 	/**
                                                  * offset to display calendar in pixels
                                                  */
-	openLeft: _propTypes2.default.number,
+	openLeft: _propTypes2.default.bool,
 	/**
-                                        * Additional props to add to the input
-                                        */
+                                      * Additional props to add to the input
+                                      */
 	inputProps: _propTypes2.default.object,
 	/**
                                           * Timezone to use for for display
@@ -84,6 +97,7 @@ SLDate.propTypes = {
 
 
 SLDate.defaultProps = {
+	openLeft: false,
 	disabled: false,
 	format: 'MM/DD/YYYY' };exports.default =
 

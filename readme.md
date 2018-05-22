@@ -75,7 +75,7 @@ prop | type | default | required | description
 **format** | `String` | `'MM/DD/YYYY'` | :x: | How to Format the Presented Date
 **inputProps** | `Object` |  | :x: | Additional props to add to the input
 **onChange** | `Function` |  | :white_check_mark: | callback when date is selected
-**openLeft** | `Number` |  | :x: | offset to display calendar in pixels
+**openLeft** | `Boolean` | `false` | :x: | offset to display calendar in pixels
 **timezone** | `String` |  | :x: | Timezone to use for for display
 **value** | `Union<String \| Object>` |  | :x: | Current date to display should be a string, Date(), or moment()
 

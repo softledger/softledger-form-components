@@ -4,6 +4,28 @@ import PropTypes from 'prop-types';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { formatDate, parseDate } from 'react-day-picker/moment';
 import moment from 'moment-timezone';
+
+/**
+ * Date Picker Overlay
+ */
+const OverlayLeft = ({ classNames, selectedDay, children, ...props }) => (
+  <div
+    className={classNames.overlayWrapper}
+    style={{ marginLeft: "-150px" }}
+    {...props}
+  >
+    <div className={classNames.overlay}>
+      {children}
+    </div>
+  </div>
+);
+
+OverlayLeft.propTypes = {
+  classNames: PropTypes.object.isRequired,
+  selectedDay: PropTypes.instanceOf(Date),
+  children: PropTypes.node.isRequired,
+};
+
 /**
  * Date Input component
  */
@@ -15,16 +37,6 @@ class SLDate extends React.Component {
 		return this.props.onChange(moment(d, this.props.timezone));
 	}
 
-	openLeft = ({classNames, selectedDay, children}) => (
-		<div 
-      className={classNames.overlayWrapper} 
-      style={{ marginLeft: this.props.openLeft }}>
-      <div className={classNames.overlay}> 
-        {children}
-      </div>
-    </div>
-	);
-
 	render() {
 		return (
 			<DayPickerInput
@@ -33,7 +45,8 @@ class SLDate extends React.Component {
 				format={this.props.format}
 				parseDate={parseDate}
 				onDayChange={this.onChange}
-				overlayComponent={this.props.openLeft && this.openLeft}
+				overlayComponent={this.props.openLeft && OverlayLeft}
+				keepFocus={!this.props.openLeft}
 				dayPickerProps={{
 					todayButton: "Today",
 					showOutsideDays: true
@@ -64,7 +77,7 @@ SLDate.propTypes = {
 	/**
 	 * offset to display calendar in pixels
 	 */
-	openLeft: PropTypes.number,
+	openLeft: PropTypes.bool,
 	/**
 	 * Additional props to add to the input
 	 */
@@ -84,6 +97,7 @@ SLDate.propTypes = {
 }
 
 SLDate.defaultProps = {
+	openLeft: false,
 	disabled: false,
 	format: 'MM/DD/YYYY'
 }

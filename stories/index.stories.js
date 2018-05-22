@@ -196,6 +196,16 @@ storiesOf('SLDate', module)
 			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
 		</div>
 	)))
+	.add('Open Left', withState({v: new Date()}, store => (
+		<div style={{paddingLeft: "300px"}}>
+			<SLDate
+				onChange={v => store.set({v})}
+				value={store.state.v}
+				openLeft={true}
+			/>
+			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
+		</div>
+	)))
 
 storiesOf('SLDateRange', module)
 	.add('Default', withState({
