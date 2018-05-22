@@ -72,6 +72,7 @@ Date Input component
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
 **disabled** | `Boolean` | `false` | :x: | true to disable toggling
+**format** | `String` | `'MM/DD/YYYY'` | :x: | How to Format the Presented Date
 **inputProps** | `Object` |  | :x: | Additional props to add to the input
 **onChange** | `Function` |  | :white_check_mark: | callback when date is selected
 **openLeft** | `Number` |  | :x: | offset to display calendar in pixels

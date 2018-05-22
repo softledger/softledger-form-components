@@ -177,6 +177,25 @@ storiesOf('SLDate', module)
 			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
 		</div>
 	)))
+	.add('Format', withState({v: new Date()}, store => (
+		<div>
+			<SLDate
+				onChange={v => store.set({v})}
+				value={store.state.v}
+				format="YYYY-MM-DD"
+			/>
+			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
+		</div>
+	)))
+	.add('Start Empty', withState({v: null}, store => (
+		<div>
+			<SLDate
+				onChange={v => store.set({v})}
+				value={store.state.v}
+			/>
+			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
+		</div>
+	)))
 
 storiesOf('SLDateRange', module)
 	.add('Default', withState({

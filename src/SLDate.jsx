@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { formatDate, parseDate } from 'react-day-picker/moment';
 import moment from 'moment-timezone';
-
 /**
  * Date Input component
  */
@@ -29,7 +28,7 @@ class SLDate extends React.Component {
 	render() {
 		return (
 			<DayPickerInput
-				value={formatDate(this.props.value)}
+				value={formatDate(this.props.value, this.props.format)}
 				formatDate={formatDate}
 				parseDate={parseDate}
 				onDayChange={this.onChange}
@@ -76,11 +75,16 @@ SLDate.propTypes = {
 	/**
 	 * true to disable toggling
 	 */
-	disabled: PropTypes.bool
+	disabled: PropTypes.bool,
+	/**
+	 * How to Format the Presented Date
+	 */
+	format: PropTypes.string
 }
 
 SLDate.defaultProps = {
-	disabled: false
+	disabled: false,
+	format: 'MM/DD/YYYY'
 }
 
 export default SLDate;
