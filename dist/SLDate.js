@@ -30,6 +30,7 @@ SLDate = function (_React$Component) {_inherits(SLDate, _React$Component);functi
 				_react2.default.createElement(_DayPickerInput2.default, {
 					value: (0, _moment.formatDate)(this.props.value, this.props.format),
 					formatDate: _moment.formatDate,
+					format: this.props.format,
 					parseDate: _moment.parseDate,
 					onDayChange: this.onChange,
 					overlayComponent: this.props.openLeft && this.openLeft,

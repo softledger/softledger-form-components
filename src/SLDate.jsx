@@ -30,6 +30,7 @@ class SLDate extends React.Component {
 			<DayPickerInput
 				value={formatDate(this.props.value, this.props.format)}
 				formatDate={formatDate}
+				format={this.props.format}
 				parseDate={parseDate}
 				onDayChange={this.onChange}
 				overlayComponent={this.props.openLeft && this.openLeft}
