@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { formatDate, parseDate } from 'react-day-picker/moment';
 import moment from 'moment-timezone';
+import ErrorFormFeedback from './ErrorFormFeedback';
 
 /**
  * Date Picker Overlay
@@ -39,24 +40,27 @@ class SLDate extends React.Component {
 
 	render() {
 		return (
-			<DayPickerInput
-				value={formatDate(this.props.value, this.props.format)}
-				formatDate={formatDate}
-				format={this.props.format}
-				parseDate={parseDate}
-				onDayChange={this.onChange}
-				overlayComponent={props => OverlayLeft(props, this.props.openLeft)}
-				keepFocus={!this.props.openLeft}
-				dayPickerProps={{
-					todayButton: "Today",
-					showOutsideDays: true
-				}}
-				inputProps={{
-					...this.props.inputProps,
-					className: "form-control",
-					disabled: this.props.disabled
-				}}
-			/>
+			<div>
+				<DayPickerInput
+					value={formatDate(this.props.value, this.props.format)}
+					formatDate={formatDate}
+					format={this.props.format}
+					parseDate={parseDate}
+					onDayChange={this.onChange}
+					overlayComponent={props => OverlayLeft(props, this.props.openLeft)}
+					keepFocus={!this.props.openLeft}
+					dayPickerProps={{
+						todayButton: "Today",
+						showOutsideDays: true
+					}}
+					inputProps={{
+						...this.props.inputProps,
+						className: "form-control",
+						disabled: this.props.disabled
+					}}
+				/>
+				<ErrorFormFeedback errors={this.props.errorText} />
+			</div>
 		);
 	}
 }
