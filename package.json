@@ -1,6 +1,6 @@
 {
   "name": "@softledger/form-components",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Geoff Ostrega <geoff.ostrega@softledger.com>",
   "license": "MIT",
   "description": "SoftLedger UI Form Components",
