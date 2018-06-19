@@ -1,9 +1,10 @@
-'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.TextArea = exports.SLFormGroup = exports.SLForm = exports.SLDateRange = exports.SLDate = exports.SimpleSelect = exports.SelectCountry = exports.Input = exports.FileUploadList = exports.ErrorFormFeedback = exports.Checkbox = undefined;
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.TextArea = exports.SLFormGroup = exports.SLForm = exports.SLDateTime = exports.SLDateRange = exports.SLDate = exports.SimpleSelect = exports.SelectCountry = exports.Input = exports.FileUploadList = exports.ErrorFormFeedback = exports.Checkbox = undefined;
 
 require('react-dates/initialize');
 require('react-select/dist/react-select.css');
 require('react-dates/lib/css/_datepicker.css');
 require('react-day-picker/lib/style.css');
+require('react-datetime/css/react-datetime.css');
 require('./styles.scss');
 
 var _fontawesome = require('@fortawesome/fontawesome');var _fontawesome2 = _interopRequireDefault(_fontawesome);
@@ -19,10 +20,11 @@ var _SelectCountry = require('./SelectCountry');var _SelectCountry2 = _interopRe
 var _SimpleSelect = require('./SimpleSelect');var _SimpleSelect2 = _interopRequireDefault(_SimpleSelect);
 var _SLDate = require('./SLDate');var _SLDate2 = _interopRequireDefault(_SLDate);
 var _SLDateRange = require('./SLDateRange');var _SLDateRange2 = _interopRequireDefault(_SLDateRange);
+var _SLDateTime = require('./SLDateTime');var _SLDateTime2 = _interopRequireDefault(_SLDateTime);
 var _SLForm = require('./SLForm');var _SLForm2 = _interopRequireDefault(_SLForm);
 var _SLFormGroup = require('./SLFormGroup');var _SLFormGroup2 = _interopRequireDefault(_SLFormGroup);
-var _TextArea = require('./TextArea');var _TextArea2 = _interopRequireDefault(_TextArea);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //hopefully this works?
-_fontawesome2.default.library.add(_faInfoCircle2.default, _faTimes2.default);exports.
+var _TextArea = require('./TextArea');var _TextArea2 = _interopRequireDefault(_TextArea);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}_fontawesome2.default.library.add(_faInfoCircle2.default, _faTimes2.default); //hopefully this works?
+exports.
 
 Checkbox = _Checkbox2.default;exports.
 ErrorFormFeedback = _ErrorFormFeedback2.default;exports.
@@ -32,6 +34,7 @@ SelectCountry = _SelectCountry2.default;exports.
 SimpleSelect = _SimpleSelect2.default;exports.
 SLDate = _SLDate2.default;exports.
 SLDateRange = _SLDateRange2.default;exports.
+SLDateTime = _SLDateTime2.default;exports.
 SLForm = _SLForm2.default;exports.
 SLFormGroup = _SLFormGroup2.default;exports.
 TextArea = _TextArea2.default;

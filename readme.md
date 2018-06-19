@@ -101,6 +101,25 @@ prop | type | default | required | description
 
 
 
+## SLDateTime
+
+From [`src/SLDateTime.jsx`](src/SLDateTime.jsx)
+
+
+
+prop | type | default | required | description
+---- | :----: | :-------: | :--------: | -----------
+**dateFormat** | `String` | `'MM/DD/YYYY'` | :x: | How to Format the Presented Date
+**disabled** | `Boolean` | `false` | :x: | true to disable toggling
+**inputProps** | `Object` |  | :x: | Additional props to add to the input
+**onChange** | `Function` |  | :white_check_mark: | callback when date is selected
+**openLeft** | `Unknown` | `false` | :x: | 
+**timezone** | `String` |  | :x: | Timezone to use for for display
+**value** | `Union<String \| Object>` |  | :x: | Current date to display should be a string, Date(), or moment()
+
+
+
+
 ## SLForm
 
 From [`src/SLForm.jsx`](src/SLForm.jsx)

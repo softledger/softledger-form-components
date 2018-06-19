@@ -4,6 +4,7 @@ import 'react-dates/initialize';
 import 'react-select/dist/react-select.css';
 import 'react-dates/lib/css/_datepicker.css';
 import 'react-day-picker/lib/style.css';
+import 'react-datetime/css/react-datetime.css';
 import './styles.scss';
 
 import fontawesome from '@fortawesome/fontawesome';
@@ -19,6 +20,7 @@ import SelectCountry from './SelectCountry';
 import SimpleSelect from './SimpleSelect';
 import SLDate from './SLDate';
 import SLDateRange from './SLDateRange';
+import SLDateTime from './SLDateTime';
 import SLForm from './SLForm';
 import SLFormGroup from './SLFormGroup';
 import TextArea from './TextArea';
@@ -32,6 +34,7 @@ export {
 	SimpleSelect,
 	SLDate,
 	SLDateRange,
+	SLDateTime,
 	SLForm,
 	SLFormGroup,
 	TextArea

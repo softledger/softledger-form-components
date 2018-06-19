@@ -9,7 +9,7 @@ import 'bootstrap/scss/bootstrap.scss';
 
 //Story components
 import { 
-	Checkbox, FileUploadList, Input, SelectCountry, SimpleSelect, SLDate, SLDateRange, SLForm, SLFormGroup, TextArea
+	Checkbox, FileUploadList, Input, SelectCountry, SimpleSelect, SLDate, SLDateRange, SLForm, SLFormGroup, TextArea, SLDateTime
 } from '../src';
 
 //promise function
@@ -202,6 +202,46 @@ storiesOf('SLDate', module)
 				onChange={v => store.set({v})}
 				value={store.state.v}
 				openLeft={true}
+			/>
+			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
+		</div>
+	)))
+
+storiesOf('SLDateTime', module)
+	.add('Default', withState({v: new Date()}, store => (
+		<div>
+			<SLDateTime
+				onChange={v => store.set({v})}
+				value={store.state.v}
+			/>
+			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
+		</div>
+	)))
+	.add('Disabled', withState({v: new Date()}, store => (
+		<div>
+			<SLDateTime
+				onChange={v => store.set({v})}
+				value={store.state.v}
+				disabled
+			/>
+			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
+		</div>
+	)))
+	.add('Format', withState({v: new Date()}, store => (
+		<div>
+			<SLDateTime
+				onChange={v => store.set({v})}
+				value={store.state.v}
+				dateFormat="YYYY-MM-DD"
+			/>
+			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
+		</div>
+	)))
+	.add('Start Empty', withState({v: null}, store => (
+		<div>
+			<SLDateTime
+				onChange={v => store.set({v})}
+				value={store.state.v}
 			/>
 			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
 		</div>
