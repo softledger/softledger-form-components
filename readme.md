@@ -114,6 +114,7 @@ prop | type | default | required | description
 **inputProps** | `Object` |  | :x: | Additional props to add to the input
 **onChange** | `Function` |  | :white_check_mark: | callback when date is selected
 **openLeft** | `Unknown` | `false` | :x: | 
+**timeFormat** | `Unknown` | `'HH:mm:ss'` | :x: | 
 **timezone** | `String` |  | :x: | Timezone to use for for display
 **value** | `Union<String \| Object>` |  | :x: | Current date to display should be a string, Date(), or moment()
 

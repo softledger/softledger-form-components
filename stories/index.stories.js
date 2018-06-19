@@ -217,6 +217,15 @@ storiesOf('SLDateTime', module)
 			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
 		</div>
 	)))
+	.add('Default String Date', withState({v: "2018-06-10T22:27:30.289Z"}, store => (
+		<div>
+			<SLDateTime
+				onChange={v => store.set({v})}
+				value={store.state.v}
+			/>
+			<p>{`Value: ${JSON.stringify(store.state.v)}`}</p>
+		</div>
+	)))
 	.add('Disabled', withState({v: new Date()}, store => (
 		<div>
 			<SLDateTime

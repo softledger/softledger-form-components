@@ -3,10 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DateTime from 'react-datetime';
 import ErrorFormFeedback from'./ErrorFormFeedback';
-
+import moment from 'moment-timezone';
 
 class SLDateTime extends React.Component {
-
 
 	render() {
 		return (
@@ -14,6 +13,7 @@ class SLDateTime extends React.Component {
 				<DateTime 
 					value={this.props.value}
 					dateFormat={this.props.dateFormat}
+					timeFormat={this.props.timeFormat}
 					onChange={this.props.onChange}
 					inputProps={{
 						...this.props.inputProps,
@@ -62,7 +62,8 @@ SLDateTime.propTypes = {
 SLDateTime.defaultProps = {
 	openLeft: false,
 	disabled: false,
-	dateFormat: 'MM/DD/YYYY'
+	dateFormat: 'MM/DD/YYYY',
+	timeFormat: 'HH:mm:ss'
 }
 
 export default SLDateTime;
