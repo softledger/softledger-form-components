@@ -2,20 +2,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
+import ErrorFormFeedback from './ErrorFormFeedback';
 
 /**
  * Simplified wrapper of react-select 
  */
 const SimpleSelect = (props) => (
-	<Select 
-		labelKey={props.labelField || 'label'}
-		valueKey={props.valueField || '_id'}
-		onChange={props.onChange}
-		value={props.value}
-		options={props.options}
-		backspaceRemoves={true}
-		disabled={props.disabled}
-	/>
+	<div>
+		<Select 
+			labelKey={props.labelField || 'label'}
+			valueKey={props.valueField || '_id'}
+			onChange={props.onChange}
+			value={props.value}
+			options={props.options}
+			backspaceRemoves={true}
+			disabled={props.disabled}
+		/>
+		<ErrorFormFeedback errors={props.errorText} />
+	</div>
 );
 
 SimpleSelect.propTypes = {
@@ -39,7 +43,15 @@ SimpleSelect.propTypes = {
 	/**
 	 * true to disable toggling
 	 */
-	disabled: PropTypes.bool
+	disabled: PropTypes.bool,
+	/**
+	 * Errors to display, should be a string or array of strings
+	 * @type {[type]}
+	 */
+	errorText: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.array
+	])
 }
 
 SimpleSelect.defaultProps = {

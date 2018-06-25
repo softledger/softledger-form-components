@@ -183,6 +183,7 @@ Simplified wrapper of react-select
 prop | type | default | required | description
 ---- | :----: | :-------: | :--------: | -----------
 **disabled** | `Boolean` | `false` | :x: | true to disable toggling
+**errorText** | `Union<String \| Array>` |  | :x: | Errors to display, should be a string or array of strings @type {[type]}
 **labelField** | `String` | `'label'` | :x: | object key to use as the label
 **onChange** | `Function` |  | :white_check_mark: | callback when option selected
 **options** | `Array` |  | :white_check_mark: | array of objects to choose from should have keys with value of valueField and labelField props
