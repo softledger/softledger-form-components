@@ -1,6 +1,6 @@
 {
   "name": "@softledger/form-components",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "author": "Geoff Ostrega <geoff.ostrega@softledger.com>",
   "license": "MIT",
   "description": "SoftLedger UI Form Components",
@@ -16,10 +16,11 @@
   "peerDependencies": {
     "prop-types": "~15.6.0",
     "react": "~16.3.0",
-    "reactstrap": "~5.0.0"
+    "reactstrap": "~5.0.0",
+    "jquery": "*"
   },
   "devDependencies": {
-    "@dump247/storybook-state": "^1.3.0",
+    "@dump247/storybook-state": "^1.5.0",
     "@storybook/addon-actions": "^3.3.15",
     "@storybook/addon-links": "^3.3.15",
     "@storybook/addons": "^3.3.15",
@@ -27,7 +28,7 @@
     "@storybook/storybook-deployer": "^2.3.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
@@ -40,8 +41,9 @@
     "react-docgen-markdown-renderer": "^1.0.2",
     "react-dom": "^16.2.0",
     "reactstrap": "^5.0.0",
-    "sass-loader": "^6.0.7",
-    "style-loader": "^0.20.3"
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.16.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.5",
@@ -51,11 +53,13 @@
     "bootstrap": "^4.0.0",
     "moment": "^2.21.0",
     "moment-timezone": "^0.5.14",
-    "react-dates": "^16.4.0",
+    "popper.js": "^1.14.3",
+    "react-dates": "^17.1.1",
     "react-datetime": "^2.14.0",
     "react-day-picker": "^7.1.9",
     "react-file-drop": "^0.1.9",
     "react-select": "^1.2.1",
-    "react-switch": "^2.3.0"
+    "react-switch": "^2.3.0",
+    "react-with-direction": "^1.3.0"
   }
 }

@@ -7,9 +7,11 @@ import ErrorFormFeedback from './ErrorFormFeedback';
  * Thing wrapper on input tag
  * Displays errors below input
  */
-const Input = ({onChange, type, value, className, errorText, disabled}) => (
+const Input = ({onChange, type, value, className, errorText, disabled, style}) => (
 	<div>
-		<input className={`form-control ${className}`}
+		<input 
+			className={`form-control ${className}`}
+			style={style}
 			onChange={e => onChange(e.currentTarget.value)}
 			type={type}
 			value={value || ''}
@@ -36,6 +38,10 @@ Input.propTypes = {
 	 * additional classnames to add to input tag
 	 */
 	className: PropTypes.string,
+	/**
+	 * Addition styles
+	 */
+	style: PropTypes.object,
 	/**
 	 * true to disable input
 	 */

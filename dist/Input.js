@@ -7,9 +7,11 @@ var _ErrorFormFeedback = require('./ErrorFormFeedback');var _ErrorFormFeedback2 
                                                                                                                                                                                                                             * Thing wrapper on input tag
                                                                                                                                                                                                                             * Displays errors below input
                                                                                                                                                                                                                             */
-var Input = function Input(_ref) {var _onChange = _ref.onChange,type = _ref.type,value = _ref.value,className = _ref.className,errorText = _ref.errorText,disabled = _ref.disabled;return (
+var Input = function Input(_ref) {var _onChange = _ref.onChange,type = _ref.type,value = _ref.value,className = _ref.className,errorText = _ref.errorText,disabled = _ref.disabled,style = _ref.style;return (
 		_react2.default.createElement('div', null,
-			_react2.default.createElement('input', { className: 'form-control ' + className,
+			_react2.default.createElement('input', {
+				className: 'form-control ' + className,
+				style: style,
 				onChange: function onChange(e) {return _onChange(e.currentTarget.value);},
 				type: type,
 				value: value || '',
@@ -37,8 +39,12 @@ Input.propTypes = {
                                   */
 	className: _propTypes2.default.string,
 	/**
-                                         * true to disable input
+                                         * Addition styles
                                          */
+	style: _propTypes2.default.object,
+	/**
+                                     * true to disable input
+                                     */
 	disabled: _propTypes2.default.bool,
 	/**
                                       * Errors to display, should be a string or array of strings

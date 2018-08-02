@@ -57,6 +57,7 @@ prop | type | default | required | description
 **disabled** | `Boolean` | `false` | :x: | true to disable input
 **errorText** | `Union<String \| Array>` |  | :x: | Errors to display, should be a string or array of strings @type {[type]}
 **onChange** | `Function` |  | :white_check_mark: | Callback when updated
+**style** | `Object` |  | :x: | Addition styles
 **type** | `String` | `'text'` | :x: | type of input
 **value** | `*` |  | :x: | value of component
 

@@ -17,6 +17,7 @@ const SimpleSelect = (props) => (
 			options={props.options}
 			backspaceRemoves={true}
 			disabled={props.disabled}
+			style={props.style}
 		/>
 		<ErrorFormFeedback errors={props.errorText} />
 	</div>

@@ -16,7 +16,8 @@ var SimpleSelect = function SimpleSelect(props) {return (
 				value: props.value,
 				options: props.options,
 				backspaceRemoves: true,
-				disabled: props.disabled }),
+				disabled: props.disabled,
+				style: props.style }),
 
 			_react2.default.createElement(_ErrorFormFeedback2.default, { errors: props.errorText })));};
 
